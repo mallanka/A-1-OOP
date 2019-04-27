@@ -31,9 +31,9 @@ namespace Advanced_Lesson_1_OOP
 
     }
 
-    public interface IShape
+    public interface IShape                     //A.L1.P1/6. Square Matrix
     {
-        void Draw();
+        int Draw();
     }
 
     class Rectangle : IShape
@@ -47,9 +47,9 @@ namespace Advanced_Lesson_1_OOP
             this.height = height;
         }
 
-        public void Draw()
+        public int Draw()
         {
-            Console.WriteLine($"Drawing Rectangle {this.width}x{this.height}");
+            return width*height;
         }
     }
 
@@ -63,29 +63,27 @@ namespace Advanced_Lesson_1_OOP
             this.rad = rad;
         }
 
-        public void Draw()
+        public int Draw()
         {
-            Console.WriteLine($"Drawing Circle R{this.rad}");
+            return  (int)(Math.PI*rad*rad);
         }
     }
 
 
     public class Triangle : IShape
     {
-        private int a;
-        private int b;
-        private int c;
+        private int baseTriangle;
+        private int height;
 
-        public Triangle(int a, int b, int c)
+        public Triangle(int baseTriangle, int height)
         {
-            this.a = a;
-            this.b = b;
-            this.a = c;
+            this.baseTriangle = baseTriangle;
+            this.height = height;
         }
 
-        public void Draw()
+        public int Draw()
         {
-            Console.WriteLine("Drawing Triangle");
+            return baseTriangle * height / 2;
         }
     }
 

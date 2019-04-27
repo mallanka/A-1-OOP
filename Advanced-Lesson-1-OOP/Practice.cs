@@ -8,12 +8,41 @@ namespace Advanced_Lesson_1_OOP
 {
     public class Practice
     {
+        static Random random = new Random();
         /// <summary>
         /// A.L1.P1. Вывести матрицу (двумерный массив) отображающую площадь круга, 
         /// квадрата, равнобедренного треугольника со сторонами (радиусами) от 1 до 10.
         /// </summary>
-        public static void A_L1_P1_OOP()
+        public static void A_L1_P1_OOP()                                //A.L1.P1/6. Square Matrix
         {
+            int[,] areaMatrix = new int[10, 3];
+            for (int i = 0; i < 10; i++)            //Circle column
+            {
+                areaMatrix[i, 0] = (new Circle(random.Next(1,11))).Draw();
+            }
+
+            for (int i = 0; i < 10; i++)            //rectangle column
+            {
+                areaMatrix[i, 1] = (new Rectangle(
+                    random.Next(1, 11), 
+                    random.Next(1, 11))).Draw();
+            }
+
+            for (int i = 0; i < 10; i++)            //triangle column
+            {
+                areaMatrix[i, 2] = (new Triangle(
+                    random.Next(1, 11), 
+                    random.Next(1, 11))).Draw();
+            }
+
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 10; j++)
+                {
+                    Console.Write(areaMatrix[j,i]+" ");
+                }
+                Console.WriteLine();
+            }
         }
 
 
@@ -23,6 +52,7 @@ namespace Advanced_Lesson_1_OOP
         /// </summary>
         public static void A_L1_P6_OperatorsOverloading()
         {
+            
         }
 
         /// <summary>
@@ -30,7 +60,7 @@ namespace Advanced_Lesson_1_OOP
         /// Продемонстрировать использование в коде. 
         /// </summary>
         public static void A_L1_P7_OperatorsOverloading()
-        {            
-        }        
+        {
+        }
     }
 }
